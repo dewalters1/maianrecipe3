@@ -53,7 +53,7 @@ $database['password']      = '';
 //----------------------------------------------
 
 //$database['database']      = 'database name goes here..';
-$database['database']      = 'dewrecipes';
+$database['database']      = 'recipes';
 
 //----------------------------------------------
 // TABLE PREFIX
@@ -72,10 +72,8 @@ $database['prefix']        = 'mr_';
 // Random characters or phrase for key
 //----------------------------------------------
 
-//$database['cookieName']    = 'mr_cookie';
-//$database['cookieKey']     = 'hfgfyf[]f[9874hg36g88sgshgyghtythfdt00kfte';
-$database['cookieName']    = 'mr_dewcookie';
-$database['cookieKey']     = 'D3nn!5Edw@rdW41t3r5S4Ann0nRoc43l1eWa1tErs!';
+$database['cookieName']    = 'mr_cookie';
+$database['cookieKey']     = 'hfgfyf[]f[9874hg36g88sgshgyghtythfdt00kfte';
 
 //================================
 // DO NOT EDIT BELOW THIS LINE
