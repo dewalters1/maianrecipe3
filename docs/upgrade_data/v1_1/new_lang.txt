@@ -1,0 +1,13 @@
+// New language vars for v2.0
+
+$ds_contact13    = 'Invalid code..';
+$ds_contact14    = 'Code';
+
+$settings15      = 'SMTP Settings';
+$settings16      = 'Enable SMTP';
+$settings17      = 'SMTP Host';
+$settings18      = 'SMTP Username';
+$settings19      = 'SMTP Password';
+$settings20      = 'SMTP Port';
+
+$script2         = 'v1.1';
