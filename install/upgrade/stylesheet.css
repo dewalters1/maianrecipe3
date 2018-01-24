@@ -1,0 +1,82 @@
+/*---------------------------------------------
+  Maian Recipe v2.0
+  Written by David Ian Bennett
+  Installer - CSS
+----------------------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 10px 0;
+	background: #730406;
+	font:normal 14px Arial, Helvetica, sans-serif;
+	color:#000;
+}
+a {
+	color: #015F90;
+}
+a:hover {
+	text-decoration: none;
+}
+a.lock {
+  background:url(images/lock.gif) no-repeat left center;
+  padding-left:25px;
+  font-weight:bold;
+}
+.mainTable {
+  margin-top: 50px;
+  background-color: #fffbcb;
+}
+.install {
+  display: block;
+  background: #fff;
+  padding:10px;
+  border:1px solid #730406;
+  font-size:24px;
+}
+.headCell {
+  border-bottom: 1px solid #730406;
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background-color:#4e626c;
+}
+.pad {
+  padding: 5px;
+}
+.pad2 {
+  padding: 5px 10px 5px 10px;
+  background:url(images/ok.gif) no-repeat 95% 40%;
+}
+.areaTable {
+  border: 1px dashed #636363;
+  background:#fff;
+}
+td {
+  text-align: left;
+}
+.info {
+  color: #636363;
+}
+.error_info {
+  display: block;
+  padding: 5px;
+  color: #FF0000;
+}
+form {
+  padding: 0;
+  margin: 0;
+}
+.formButton {
+  background:#4e626c;
+  color:#fff;
+  border:1px solid #730406;
+  font-weight: bold;
+}
+p.button {
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
