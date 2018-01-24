@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Frequently Asked Questions: Maian Recipe v2.0 Documentation - Free Recipe Script &copy; Maian Script World!</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+
+<!-- Start Site Wrapper -->
+<div id="wrapper">
+
+<!-- Top Bar -->
+<div id="topBar">
+  <p><a href="http://www.maianscriptworld.co.uk/" title="Maian Script World" onclick="window.open(this);return false">Click Here for more FREE PHP scripts from Maian Script World</a></p>
+</div>  
+<!-- End Top Bar -->
+
+<!-- Start Header -->
+<div id="header">
+ <img src="images/header.gif" alt="Maian Recipe v2.0 Documentation" title="Maian Recipe v2.0 Documentation" />
+</div>
+<!-- End Header -->
+
+<!-- Start Menu Bar -->
+<div id="menu">
+  <table width="75%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="index.html" title="Home">HOME</a></td>
+    <td><a href="installation.html" title="Installation">INSTALLATION</a></td>
+    <td><a href="features.html" title="Features">FEATURES</a></td>
+    <td><a href="upgrade.html" title="Upgrade">UPGRADE</a></td>
+    <td><a href="faq.html" title="F.A.Q" class="first">F.A.Q</a></td>
+    <td><a href="script-info.html" title="Script Info">SCRIPT INFO</a></td>
+  </tr>
+  </table>
+</div>
+<!-- End Menu Bar -->
+
+<!-- Start Content Wrapper -->
+<div id="contentWrapper">
+
+<!-- Start Body Area -->
+<div id="bodyArea">
+
+<span class="headLeft">How come you used tables for the menu and not anywhere else?:</span>
+
+<p>Most CSS purists believe you should totally disregard HTML tables. Tables are a valid HTML object and should not just be thrown out. So, this is my
+way of saying I don`t conform to the CSS masses. Long live tables, thats my motto. If you don`t like it, change it. No big deal. :)</p>
+
+<span class="headLeft">How do I know if I have the GD library installed on my server?:</span>
+
+<p>For the captcha to load properly, your server is required to have GD graphic library enabled. The GD library is included with PHP but not always enabled.<br /><br />
+   When you load the auto installation file, this will auto detect the GD library and display its version if enabled. Recommendation is v2.0 or higher. If you do not
+   see this module installed, contact your web host.<br /><br />
+   Maian Recipe does not support ImageMagick
+</p>
+
+<span class="headLeft">How do I set up a MySQL database?:</span>
+
+<p>As servers vary, there is no one tutorial that can explain this procedure. Please contact your web hosting company who will be happy to advise you.</p>
+
+<span class="headLeft">How do I find out what my server path is?:</span>
+
+<p>Create a file called path.php and add below code into it:<br /><br />
+&lt;?php<br />
+echo $_SERVER['DOCUMENT_ROOT'];
+?&gt;<br /><br />
+Upload this file to your server and access it in your browser. Now you`ll see your full server path. Add that path to your Maian Recipe admin settings. Just add if necesary the folder name of your recipe installation incl. a trailing slash.<br /><br />
+If you are still unsure, contact your web host.
+</p>
+
+<span class="headLeft">How do I edit the templates to adapt the system into my own design?:</span>
+
+<p>A common question. You need to look at your own structure and see how the HTML is laid out. Start by editing the header and footer template and go from there. Using
+an include to load the system or loading the system via an iframe is not recommended.</p>
+
+<span class="headLeft">I`ve enabled the search engine friendly urls but I see a 404 page not found or a 500 internal server error:</span>
+
+<p>See the 'Features' page above.</p>
+
+<span class="headLeft">Can you set the system up for me or adapt it into my own site?:</span>
+
+<p>Of course, for a small fee or donation, so long as your site isn`t mega complicated. Adapting into CMS is a definite no. CMS systems are big, bulky and overly clunky. Use the contact option on my website. If I`m very busy it may take a few days.</p>
+
+<span class="headLeft" style="margin-bottom:3px">Can I disable the hover help tips in the admin area?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">The date is sometimes displaying wrong. My server is X hours ahead or behind, can I adjust this?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I increase or decrease the amount of latest or most popular recipes?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I increase or decrease the amount of associated categories to show?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I show the amount of recipes in each category on the homepage?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I include the count of recipes in child categories when showing parent count?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I order recipes by ID instead of name?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I have more image upload boxes on the 'Add Recipe' page?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I disable/enable the e-mail auto responders?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I enable/disable the tell a friend report?:</span>
+
+<span class="headLeft" style="margin-bottom:3px">Can I change the date format?:</span>
+
+<p>The answer to all the above is YES. See the 'control/defined.inc.php' file.</p>
+
+<span class="headLeft">This system is the best. Can I offer you an insane amount of money for the sole rights?:</span>
+
+<p>If your offer is reasonable and genuine I might be tempted. :p</p>
+
+<span class="headLeft">I see Access denied for user 'XXX'@'localhost' (using password: YES). What gives?:</span>
+
+<p>Your database connection information is incorrect. Check and try again.</p>
+
+<span class="headLeft">Can I remove the 'Powered by' link in the header:</span>
+
+<p>Sure. This is not required, but the footer link must remain in place. You can set this to off in the 'control/defined.inc.php' file.</p>
+
+<span class="headLeft">Can I use my own header logo?:</span>
+
+<p>Of course, simply overwrite the existing 'templates/images/header.gif' file.</p>
+
+<span class="headLeft">What is the 'robots.txt' for?:</span>
+
+<p><b>From: robotstxt.org</b>: &quot;Web Robots (also known as Web Wanderers, Crawlers, or Spiders), are programs that traverse the Web automatically. Search engines such as Google use them to index the web content, spammers use them to scan for email addresses, and they have many other uses.&quot;<br /><br />
+This file can prevent bots from accessing certain areas of your website. The Maian Recipe robots.txt file includes exclusions for many spam bots. Add more if necessary. Note that removing this file from your directory will not upset your recipe system or its functionality.</p>
+
+<span class="headLeft">Can I change the colours and make loads of HTML changes?:</span>
+
+<p>yes, you can do what you want as long as the copyright remains in place.</p>
+
+<span class="headLeft">Can I remove the footer copyright?:</span>
+
+<p>Yes, you can pay a copyright fee. See the Maian Recipe website.</p>
+
+<span class="headLeft">Where do I change the text in the system?:</span>
+
+<p>lang/english.php<br />
+templates/email/*.txt</p>
+
+<span class="headLeft">I think I`ve found a bug, what do I do?:</span>
+
+<p>Please post on the forum or use the contact option if you think its of a security nature. Posting security bugs isn`t recommended on the forum.</p>
+
+<span class="headLeft">Can I have more image upload boxes, but only in the admin area?:</span>
+
+<p>Sure. See the 'admin/control/defined.inc.php' file.</p>
+
+<span class="headLeft">Can I show the recipe info boxes in the admin area by default?:</span>
+
+<p>No problem. See the 'admin/control/defined.inc.php' file.</p>
+
+<span class="headLeft">Can I disable the action confirmation messages in the admin area?:</span>
+
+<p>Yes. See the 'admin/control/defined.inc.php' file.</p>
+
+<span class="headLeft">I can`t log in to the admin area, whats my log in details?:</span>
+
+<p>I dunno, you tell me. You would have set this on install in the 'admin/control/defined.inc.php' file.</p>
+
+<span class="headLeft">Images are not being uploaded, whats wrong?:</span>
+
+<p>Is the 'templates/images/recipes' folder world writeable? ie: 0777 (or 0755 on some servers only).</p>
+
+<span class="headLeft">I can`t find this html code or that html code. I can see it in the source code. Grr...its driving me nuts, where is it?:</span>
+
+<p>Get a good search utility. Try <a href="http://www.harddisksearch.com/" title="Hard Disk Search and Stats" onclick="window.open(this);return false">Hard Disk Search &amp; Stats</a>, its FREE! 99% of the HTML is in the templates folder.</p>
+
+<!--
+<span class="headLeft">ll:</span>
+
+<p>text here..</p>
+
+<span class="headLeft">ll:</span>
+
+<p>text here..</p>
+
+<span class="headLeft">ll:</span>
+
+<p>text here..</p>
+-->
+</div>
+<!-- End Body Area -->
+
+
+<!-- Footer -->
+<div id="footer">
+ <p class="copyright">Powered by: <a href="http://www.maianrecipe.com/" title="Maian Recipe v2.0" onclick="window.open(this);return false"><b>Maian Recipe v2.0</b></a><br />&copy; 2006-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Maian Script World. All Rights Reserved</p>
+</div>
+
+<!-- End Footer -->
+
+</div>
+<!-- End Content Wrapper -->
+
+</div>
+<!-- End Site Wrapper -->
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>
+

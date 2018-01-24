@@ -1,0 +1,220 @@
+/*
+  Maian Recipe v2.0 - Stylesheet
+  Written by David Ian Bennett
+  http://www.maianscriptworld.co.uk
+*/
+
+body {
+  background:#730406 url(images/body.gif) repeat-x;
+  padding:0;
+  margin:0;
+  font:12px verdana,sans-serif;
+  color:#b91418;
+}
+
+div, h1, h2, h3, h4, p, form, label, input, textarea, img, span {
+  margin:0;
+  padding:0;
+}
+
+img {
+  border:0;
+}
+
+a {
+  color:#4e616c;
+}
+
+a:hover {
+  color:#4e616c;
+  text-decoration:none;
+}
+
+td {
+  text-align: left;
+  vertical-align: top;
+}
+
+#wrapper {
+  width: 960px;
+  margin:0 auto;
+}
+
+#topBar p {
+  color:#fff;
+  font-size:11px;
+  text-align:right;
+  padding-top:4px;
+}
+
+#topBar a {
+  color:#fff;
+}
+
+#topBar a:hover {
+  text-decoration: none;
+}
+
+#header {
+  padding:15px 0 6px 0;
+  text-align: left;
+}
+
+#menu {
+  text-align: left;
+  height:55px;
+}
+
+#menu a {
+  display: block;
+  background:url(images/menu_bg.gif) no-repeat;
+  width:125px;
+  height:34px;
+  padding:13px 0 10px 0;
+  text-align:center;
+  color:#fff;
+  text-decoration:none;
+  font-size:11px;
+  font-weight: bold;
+}
+
+#menu .search {
+  background:url(images/search_bg.gif) no-repeat;
+  width:460px;
+  color:#fff;
+  height:34px;
+}
+
+#menu .box {
+  padding:3px;
+  font:12px verdana,sans-serif;
+  border:1px solid #c5c089;
+  width:75%;
+  background:#fffbcb;
+  color:#b91418;
+}
+
+#menu .button {
+  font:12px verdana,sans-serif;
+  border:1px solid #fff;
+  background:#4e626c url(images/search_button.gif) repeat-x;
+  padding:2px 0 2px 0;
+  color:#fff;
+  width:60px;
+}
+
+#menu .search form {
+  padding:7px 0 5px 10px;
+}
+
+#menu a.first {
+  background:url(images/menu_bg2.gif) no-repeat;
+}
+
+#menu a:hover {
+  background:url(images/menu_bg2.gif) no-repeat;
+  text-decoration: underline;
+  color:#fff;
+}
+
+#menu .bullets {
+  color:#e0ecb5;
+  font-size:10px;
+}
+
+#menu p {
+  float: right;
+  color:#fff;
+  padding-top:10px;
+  font-size:11px;
+}
+
+#searchBar {
+  background:url(images/search_bar.gif) no-repeat center center;
+  height:50px; 
+  margin-top:10px;
+}
+
+#contentWrapper {
+  background:#fffbcb;
+  padding:10px;
+}
+
+#bodyArea {
+  padding:0 0 0 5px;
+  margin-top:10px;
+}
+
+#bodyArea .uRoutine a {
+  display: block;
+  padding-left:20px;
+}
+
+#bodyArea p.text {
+  background:#fffbcb;
+  border:1px dashed #c5c089;
+}
+
+#bodyArea .uRoutine {
+  display: block;
+  background:url(images/upgrade.png) no-repeat left center;
+  margin-bottom:10px;
+  width:160px;
+}
+
+#bodyArea .headLeft {
+  padding:10px;
+  background:#eee9b1 url(images/grad.gif) repeat-x;
+  border:1px solid #a48c57;
+  display:block;
+  font-weight: bold;
+  text-align:left;
+}
+
+#bodyArea p {
+  background:#fff;
+  margin:2px 0 2px 0;
+  border:1px solid #c5c089;
+  padding:10px;
+  line-height:17px;
+}
+
+#imageBar {
+}
+
+#imageBar img {
+  padding:5px;
+  border:1px dashed #c5c089;
+  background:#f1ebb7;
+}
+
+#footer {
+	text-align: center;
+	color:#fffbcb;
+}
+
+#footer p.links {
+	color:#fffbcb;
+	background:#a48c57;
+  padding:5px;
+  font:10px verdana,sans-serif;
+}
+
+#footer p.links a {
+  color:#fffbcb;
+}
+
+#footer p.copyright {
+	color:#4e626c;
+	background:#efe9b5;
+  padding:10px;
+  font:10px verdana,sans-serif;
+}
+
+#footer p.copyright a {
+  color:#4e626c;
+}
+
+#footer p.copyright a:hover,#footer p.links a:hover {
+  text-decoration: none;
+}

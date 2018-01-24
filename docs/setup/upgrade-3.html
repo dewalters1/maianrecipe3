@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Upgrade v1.0 => v2.0 ONLY: Maian Recipe v2.0 Documentation - Free Recipe Script &copy; Maian Script World!</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+
+<!-- Start Site Wrapper -->
+<div id="wrapper">
+
+<!-- Top Bar -->
+<div id="topBar">
+  <p><a href="http://www.maianscriptworld.co.uk/" title="Maian Script World" onclick="window.open(this);return false">Click Here for more FREE PHP scripts from Maian Script World</a></p>
+</div>  
+<!-- End Top Bar -->
+
+<!-- Start Header -->
+<div id="header">
+ <img src="images/header.gif" alt="Maian Recipe v2.0 Documentation" title="Maian Recipe v2.0 Documentation" />
+</div>
+<!-- End Header -->
+
+<!-- Start Menu Bar -->
+<div id="menu">
+  <table width="75%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="index.html" title="Home">HOME</a></td>
+    <td><a href="installation.html" title="Installation">INSTALLATION</a></td>
+    <td><a href="features.html" title="Features">FEATURES</a></td>
+    <td><a href="upgrade.html" title="Upgrade" class="first">UPGRADE</a></td>
+    <td><a href="faq.html" title="F.A.Q">F.A.Q</a></td>
+    <td><a href="script-info.html" title="Script Info">SCRIPT INFO</a></td>
+  </tr>
+  </table>
+</div>
+<!-- End Menu Bar -->
+
+<!-- Start Content Wrapper -->
+<div id="contentWrapper">
+
+<!-- Start Body Area -->
+<div id="bodyArea">
+
+<span class="headLeft">Upgrade Routine v1.0 => v2.0 ONLY:</span>
+
+<p>Make sure you have a structural and schematic backup before you begin.<br /><br />Please read these instructions carefully. Upgrading is entirely at your own risk:</p>
+
+<span class="headLeft">IMPORTANT - PLEASE READ:</span>
+
+<p>&#8226; v2.0 is a complex system compared to v1.0, however the original structure of the system has been maintained, except for the images. Images will only export to
+v2.0 if the images exist in your 'images/recipes' folder. If you are linking to them on an external server they won`t export correctly. You will need to move the images after upgrading.<br /><br />
+
+&#8226; The template structure in v2.0 is different to v1.0. Your existing layout will not adapt into your existing layout. After upgrade the default v2.0 templates will load. If you copy your
+templates from v1.0 the system will fail.<br /><br />
+
+&#8226; The v1.0 language file is NOT compatible with v2.0. The language files will need re-translating. Text in e-mail templates will need updating as well.<br /><br />
+
+&#8226; Any personal modifications you did in v1.0 will be lost when you upgrade.<br /><br />
+
+&#8226; The url rewrite rules are different in v2.0. Links to previous urls may not work.
+
+</p>
+
+<span class="headLeft">Upgrade Instructions:</span>
+
+<p class="text"><b>1</b>: To begin, first create a new folder alongside your existing recipe installation. If your installation directory is 'recipes', you might call this one 'recipe2'. If the system
+is in your root, you`ll have to move the system back into your root afterwards.<br /><br />
+
+<b>2</b>: In v2.0 of Maian Recipe, open the 'control/connect.inc.php' file in your text editor and update it to include the same connection information as your current connection file. If you have created a duplicate database, it
+will be to the copy.</p>
+
+<p>inc/db_connection.inc.php</p>
+
+<p class="text"><b>3</b>: Again, in your text editor, open the 'admin/control/defined.inc.php' file and set the same username &amp; password for your admin area as you have in the following file:</p>
+
+<p>admin/inc/password.inc.php</p>
+
+<p class="text"><b>4</b>: Using your FTP client, upload all files/folders for v2.0 into the new directory you just created.<br />&nbsp;&nbsp;&nbsp;(<b>Structure must be maintained and there can be NO whitespace in any .php files</b>)<br /><br />
+
+<b>5</b>: The new location for the images is 'templates/images/recipes'. So, move or make a copy of your original images into this new directory.
+ 
+</p>
+
+<p>images/recipes (v1.0) =&gt; templates/images/recipes (v2.0)</p>
+
+<p class="text"><b>6</b>: Chmod the 'templates/images/recipes/' folder to 0777 to make it world writeable. 0755 will work on some servers and should be used instead. Changing permissions can
+be done using your FTP client or server control panel. Not sure? Contact your host.<br /><br />
+
+<b>7</b>: v2.0 has a cloud tag system. When the upgrade runs it will create your cloud tags from your current recipe data. If you want the system to skip words when the upgrade runs, you must edit the
+following file BEFORE you run the upgrade routine:
+</p>
+
+<p>control/cloud-tags-skip-file.txt</p>
+
+<p class="text"><b>8</b>: Next, access the upgrade routine in your browser via the url below. The system will auto detect you are running v1.0:</p>
+
+<p>http://www.yoursite.com/new-recipe-directory/install/upgrade/index.php</p>
+
+<p class="text">Follow the onscreen instructions to update your system. If you have a lot of recipes, the building of the cloud tag data may take awhile. Please be patient.<br /><br />
+
+<b>9</b>: When the routine has completed, delete the 'install/' folder from your directory.<br /><br />
+
+<b>10</b>: Delete your v1.0 installation folder and all its contents. Then, rename your new folder to the same as the one you just deleted.<br /><br />
+
+<b>11</b>: Log into your administration area. Click 'Settings' from the top menu to configure your system for the new features. Make sure the install and server paths are correct. Your CSS files and images may
+NOT load if the install path is incorrect. You will also need to update recipe and category meta descriptions and keywords if applicable.<br /><br />
+
+<b>12</b>: If you enable the search engine friendly urls rename the 'htaccess_COPY.txt' file to '.htaccess'. See the notes about this on the 'Features' page above.<br /><br />
+
+<b>13</b>: Update language file/templates/e-mail templates as required.<br /><br />
+
+Thats it, you`re done. Hopefully Maian Recipe v2.0 is working ok for you.
+
+</p>
+
+
+
+</div>
+<!-- End Body Area -->
+
+
+<!-- Footer -->
+<div id="footer">
+ <p class="copyright">Powered by: <a href="http://www.maianrecipe.com/" title="Maian Recipe v2.0" onclick="window.open(this);return false"><b>Maian Recipe v2.0</b></a><br />&copy; 2006-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Maian Script World. All Rights Reserved</p>
+</div>
+
+<!-- End Footer -->
+
+</div>
+<!-- End Content Wrapper -->
+
+</div>
+<!-- End Site Wrapper -->
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>
+

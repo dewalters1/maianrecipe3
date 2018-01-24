@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Upgrade v1.1 => v1.2 ONLY: Maian Recipe v2.0 Documentation - Free Recipe Script &copy; Maian Script World!</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+
+<!-- Start Site Wrapper -->
+<div id="wrapper">
+
+<!-- Top Bar -->
+<div id="topBar">
+  <p><a href="http://www.maianscriptworld.co.uk/" title="Maian Script World" onclick="window.open(this);return false">Click Here for more FREE PHP scripts from Maian Script World</a></p>
+</div>  
+<!-- End Top Bar -->
+
+<!-- Start Header -->
+<div id="header">
+ <img src="images/header.gif" alt="Maian Recipe v2.0 Documentation" title="Maian Recipe v2.0 Documentation" />
+</div>
+<!-- End Header -->
+
+<!-- Start Menu Bar -->
+<div id="menu">
+  <table width="75%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="index.html" title="Home">HOME</a></td>
+    <td><a href="installation.html" title="Installation">INSTALLATION</a></td>
+    <td><a href="features.html" title="Features">FEATURES</a></td>
+    <td><a href="upgrade.html" title="Upgrade" class="first">UPGRADE</a></td>
+    <td><a href="faq.html" title="F.A.Q">F.A.Q</a></td>
+    <td><a href="script-info.html" title="Script Info">SCRIPT INFO</a></td>
+  </tr>
+  </table>
+</div>
+<!-- End Menu Bar -->
+
+<!-- Start Content Wrapper -->
+<div id="contentWrapper">
+
+<!-- Start Body Area -->
+<div id="bodyArea">
+
+<span class="headLeft">Upgrade Routine v1.1 => v1.2 ONLY:</span>
+
+<p>Make sure you have a structural and schematic backup before you begin.<br /><br />Please read these instructions carefully. Upgrading is entirely at your own risk:</p>
+
+<span class="headLeft">Upgrade Instructions:</span>
+
+<p class="text">v1.2 is an upgrade for search engine friendly urls. If your server doesn`t support htaccess this will not be necessary.<br /><br />
+To upgrade to v1.2, follow the instructions below. Structure has been maintained in this version.<br /><br />
+<b>1</b>: Access your database via your server control panel and run the following update file. Note that if you changed the prefix, you`ll need to update this file before you run it.</p>
+        
+<p>/docs/upgrade_data/v1_2/upgrade.sql</p>
+
+<p class="text"><b>2</b>: Open your current language file in your text editor and update/add the variables in the following file:</p>
+
+<p>/docs/upgrade_data/v1_2/new_lang.txt</p>
+
+<p class="text"><b>3</b>: Replace the following files in your 'admin' folder:</p>
+
+<p>/admin/data_files/home.php <i>(<b>Updated</b>)</i><br />
+/admin/data_files/settings.php <i>(<b>Updated</b>)</i><br />
+/admin/index.php <i>(<b>Updated</b>)</i><br />
+/admin/images/logo.gif <i>(<b>Updated</b>) (Optional)</i></p>
+            
+<p class="text"><b>4</b>: Replace or add the following files in your installation url. The 'inc/defined.inc.php' is a new file and sees the defined vars moved from the index.php file, to make future updates easier. These will need resetting. So, for example, if
+you had the captcha disabled, you`ll need to reset this var in the new file.</p>
+        
+<p>classes/class_mail.inc.php <i>(<b>Updated</b>)</i><br />
+inc/header.inc.php <i>(<b>Updated</b>)</i><br />
+inc/functions.php <i>(<b>Updated</b>)</i><br />
+inc/defined.inc.php <i>(<b>New</b>)</i><br />
+index.php <i>(<b>Updated</b>)</i><br /><br />
+If you updated the mail class file for HTML e-mails, you`ll need to open that file in your text editor and set the <b>$html</b> var to true. This is an easier option in v1.2.</p>
+            
+<p class="text"><b>5</b>: Replace the following templates. If you made extensive edits to these files, you can update each file manually. All you need to change are the urls. The new vars are all prefixed '_URL' and you`ll also need to add the 
+base href tag in the header.tpl.php file. If you made no edits, just replace the files.</p>
+        
+<p>templates/popups/contact.tpl.php <i>(<b>Updated</b>)</i><br />
+templates/popups/friend.tpl.php <i>(<b>Updated</b>)</i><br />
+templates/header.tpl.php <i>(<b>Updated</b>)</i><br />
+templates/recipe.tpl.php <i>(<b>Updated</b>)</i></p>
+
+<p class="text"><b>6</b>: Finally, add the .htaccess file into your recipe root folder. If you already have an .htaccess file in place, update to include recipe directives. Note that if your server doesn`t support this you will
+see a server error. If that happens, remove it:</p>
+        
+<p>.htaccess <i>(<b>New</b>)</i></p>
+
+<p class="text"><b>7</b>: Log in to your administration area and update the url path to include the full url to your recipe installation. No trailing slash. Also,
+enable mod rewrite if you want search engine friendly urls.</p>
+
+<p class="text"><b>8</b>: If required, change url text variables in the 'inc/defined.inc.php' file. Read the instructions carefully before changing these variables. Also, make sure
+other vars are reset as necessary.<br /><br />Upgrade complete. Test to make sure everything is working ok.</p>
+
+</div>
+<!-- End Body Area -->
+
+
+<!-- Footer -->
+<div id="footer">
+ <p class="copyright">Powered by: <a href="http://www.maianrecipe.com/" title="Maian Recipe v2.0" onclick="window.open(this);return false"><b>Maian Recipe v2.0</b></a><br />&copy; 2006-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Maian Script World. All Rights Reserved</p>
+</div>
+
+<!-- End Footer -->
+
+</div>
+<!-- End Content Wrapper -->
+
+</div>
+<!-- End Site Wrapper -->
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>
+

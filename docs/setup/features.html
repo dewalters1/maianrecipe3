@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Upgrade: Maian Recipe v2.0 Documentation - Free Recipe Script &copy; Maian Script World!</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+
+<!-- Start Site Wrapper -->
+<div id="wrapper">
+
+<!-- Top Bar -->
+<div id="topBar">
+  <p><a href="http://www.maianscriptworld.co.uk/" title="Maian Script World" onclick="window.open(this);return false">Click Here for more FREE PHP scripts from Maian Script World</a></p>
+</div>  
+<!-- End Top Bar -->
+
+<!-- Start Header -->
+<div id="header">
+ <img src="images/header.gif" alt="Maian Recipe v2.0 Documentation" title="Maian Recipe v2.0 Documentation" />
+</div>
+<!-- End Header -->
+
+<!-- Start Menu Bar -->
+<div id="menu">
+  <table width="75%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="index.html" title="Home">HOME</a></td>
+    <td><a href="installation.html" title="Installation">INSTALLATION</a></td>
+    <td><a href="features.html" title="Features" class="first">FEATURES</a></td>
+    <td><a href="upgrade.html" title="Upgrade">UPGRADE</a></td>
+    <td><a href="faq.html" title="F.A.Q">F.A.Q</a></td>
+    <td><a href="script-info.html" title="Script Info">SCRIPT INFO</a></td>
+  </tr>
+  </table>
+</div>
+<!-- End Menu Bar -->
+
+<!-- Start Content Wrapper -->
+<div id="contentWrapper">
+
+<!-- Start Body Area -->
+<div id="bodyArea">
+
+<span class="headLeft">Features:</span>
+
+<p>Please read this page carefully as it contains feature information:</p>
+
+<span class="headLeft">FullText Search System:</span>
+
+<p>Maian Recipe uses MySQL`s <a href="http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html" title="FullText" onclick="window.open(this);return false">FullText</a> search system. This has certainly boolean search options like a search engine. Details as follows:<br /><br />
+ <b>apple banana</b><br /><br />Find results that contain at least one of the two words.<br /><br />
+ <b>+apple +juice</b> <br /><br />Find results that contain both words.<br /><br />
+ <b>+apple macintosh</b><br /><br />Find results that contain the word `apple`, but rank results higher if they also contain `macintosh`.<br /><br />
+ <b>+apple -macintosh</b><br /><br />Find results that contain the word `apple` but not `macintosh`.<br /><br />
+ <b>+apple ~macintosh</b><br /><br />Find results that contain the word `apple`, but if the ad also contains the word `macintosh`, rates it lower than if the ad does not. This is `softer` than a search for '+apple -macintosh', for which the presence of `macintosh` causes the ad not to be returned at all.<br /><br />
+ <b>+apple +(&gt;turnover &lt;strudel)</b><br /><br />Find results that contain the words `apple` and `turnover`, or `apple` and `strudel` (in any order), but rank `apple turnover` higher than `apple strudel`.<br /><br />
+ <b>apple*</b><br /><br />Find results that contain words such as `apple`, `apples`, `applesauce`, or `applet`.<br /><br />
+ <b>"some words"</b><br /><br />Find results that contain the exact phrase `some words` (for example, results that contain `some words of wisdom` but not `some noise words`).
+</p>
+
+<span class="headLeft">Ajax Rating System:</span>
+
+<p>The Ajax rating system included in Maian Recipe is Ryan Masuga`s <a href="http://masugadesign.com/the-lab/scripts/unobtrusive-ajax-star-rating-bar/" title="Ajax Star Rating Bar" onclick="window.open(this);return false">Ajax Star Rating Bar</a>, which I`ve adapted and modified for the system. Basically I took
+Ryan`s original code and made it class based as well as modifying the ajax code. I would like to thank Ryan for his work.<br /><br />
+To make changes to the appearance of the rating system you should edit the 'rating.css' file. The image is located at 'templates/images/starrating.png'. If you create your
+own image you should also edit the define ('RATING_UNIT_IMAGE_WIDTH', 32); variable in the 'control/defined.inc.php' file. DO NOT change anything if you aren`t sure what you
+are doing.
+</p>
+
+<span class="headLeft">Ajax Comments System:</span>
+
+<p>The comments system is also Ajax based. Comments can be set to approval in the settings if required and if set, can be batch approved in the admin area. If a successful
+comment is posted, the system launches the <a href="http://labs.ibegin.com/ibox/" title="iBox" onclick="window.open(this);return false">iBox</a> instead of a standard js
+box. If an error is detected the standard pop up launches. Use the system to see how it works. iBox beahviour can be global for comments or disabled completely by editing
+the define ('USE_IBOX_FOR_COMMENTS', 1); variable in the 'control/defined.inc.php' file.<br /><br />
+To adapt globally for all vars, also see the comments in the 'templates/js/comments.js' file. The iBox colour settings are in the 'templates/iBox' folder. DO NOT change anything if you aren`t sure what you are doing.</p>
+
+<span class="headLeft">Cloud Tags (Experimental):</span>
+
+<p>Cloud tags are available in Maian Recipe, but are still experimental. This can be enabled in the settings. If you have cloud tags enabled, the system builds a keyword density list from words
+in your ingredients and cooking instructions when you add a recipe or update it. By default only words 5 characters or higher are used. This can be changed in the
+define ('CLOUD_TAG_WORD_LIMIT', 5); variable in the 'control/defined.inc.php' file. Note that all words are run through a filter when cloud tags are enabled. Foreign characters
+are returned as English equivalents. Cloud tags may not function as expected with certain foreign characters.<br /><br />
+Cloud tags display as different sizes depending on the keywords density. More popular words appear larger. Edit this in the main 'style.css' file.<br /><br />
+If you want to omit common words, edit the 'control/cloud-tags-skip-file.txt' file. One entry per line.<br /><br />
+Finally, to set the max cloud tag display, edit the define ('CLOUD_TAGS_TO_DISPLAY', 20); var in the 'control/defined.inc.php' file. Set to a high number to display all. By
+default only 20 words are shown on recipe pages. DO NOT change anything if you aren`t sure what you are doing.</p>
+
+<span class="headLeft">Spam Prevention Captcha:</span>
+
+<p>The captcha implemented in Maian Recipe is the <a href="http://www.phpcaptcha.org" title="SecureImage" onclick="window.open(this);return false">SecureImage</a> class by
+Drew Phillips. The comments uses an alphanumeric code, the main contact pages uses a word list (captcha/words/words.txt). You can edit the captcha settings in the 'captcha/' directory. Change to your own words if
+you want to.<br /><br />
+If you need to make changes you should also change the class parameters at the bottom of the main index.php file. You can disable the word list for the contact pages here if
+you prefer random alphanumeric codes.</p>
+
+<span class="headLeft">Flash Header Slideshow:</span>
+
+<p>Maian Recipe has a rather attractive flash header on install. You can use this with your own images or simply remove the code from the header template and not use it. Or
+use your own flash file. Up to you. To use the Maian Recipe flash header with your own images, replace the images in the 'templates/images/flash-header' with your own. Simple
+as that.<br /><br />
+The flash header has 67 transitional effects built in and can also render text on the pictures. For this you should read the comments in the 'classes/flash-header.php' file.
+DO NOT change anything if you aren`t sure what you are doing and do not contact me for flash modifications. If you want a better header, try something else.</p>
+
+<span class="headLeft">RSS Feeds:</span>
+
+<p>The RSS feed can be enabled/disabled in the settings. The amount of latest recipes to show in the feed and also the build date format are set in the 'control/defined.inc.php'
+file. The RSS styling is in the 'rss.css' file, but many modern browsers now have their own styling for RSS feeds and this will do nothing.</p>
+
+<span class="headLeft">Javascript Image Scroller / Recipe Pictures:</span>
+
+<p>The picture scroller was kindly provided by <a href="http://www.dynamicdrive.com" title="Dynamic Drive" onclick="window.open(this);return false">Dynamic Drive</a>. On the recipes
+page if you have lots of images, they will scroll from left to right and vice versa when you hover your mouse over the images. To adjust the colours. edit the 'gallery.css' file.<br /><br />
+When thumbnails are clicked, Timo Sack`s <a href="http://enlargeit.timos-welt.de" title="EnlargeIt" onclick="window.open(this);return false">EnlargeIt</a> is launched. This is
+one of the many Lightbox clones. Maian Recipe uses 2 or 3 different ones including iBox and GreyBox. Edit the EnlargeIt files in the 'templates/enlargeIt' folder.</p>
+
+<span class="headLeft">Visitor Submitted Recipes:</span>
+
+<p>You can enable visitor recipe submissions on a per category basis. If no category has this enabled, the 'Add Recipe' link won`t function. Recipes can be set to auto
+approval in the settings and if enabled, batch approved.</p>
+
+<span class="headLeft">Search Engine Friendly URLs/Mod-Rewrite:</span>
+
+<p>If you enable this option in your settings, you MUST rename your 'htaccess_COPY.txt' file to '.htaccess'. If you fail to do this you will see a 404 error. Actually the system
+checks this file is in place. This function turns standard .php files into .html files. This has many benefits, including the masking of the scripting language for security and also better search engine optimisation.<br /><br />
+If you are only familiar with html, this may confuse you as the folder structure will appear totally different than what it is. This is how it works.<br /><br />
+<b>IMPORTANT!!</b> This function will ONLY work on Apache servers. If you enable this on a server not supporting the rewrite directives you will see a 500 Internal Server
+Error. If you see this remove the '.htaccess' file and change the settings back to DISABLE this feature.<br /><br />
+Finally, if you have renamed the .txt file and your server does support htaccess, but you still see a 404, see the comments in the .htaccess file. You may need to set a RewriteBase rule.</p>
+
+<span class="headLeft">Hit Counter:</span>
+
+<p>The hit counter displays the amount of times the recipe has been viewed. Instead of text I`ve set it to display graphic digits. You can change the default minimum amount
+of digits in the define ('HIT_COUNT_DIGITS_MIN', 6); variable in the 'control/defined.inc.php' file. By default its 6, so the count starts 000001. You can also globally
+disable/enable the hit counter in this same file.<br /><br />
+</p>
+
+</div>
+<!-- End Body Area -->
+
+
+<!-- Footer -->
+<div id="footer">
+ <p class="copyright">Powered by: <a href="http://www.maianrecipe.com/" title="Maian Recipe v2.0" onclick="window.open(this);return false"><b>Maian Recipe v2.0</b></a><br />&copy; 2006-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Maian Script World. All Rights Reserved</p>
+</div>
+
+<!-- End Footer -->
+
+</div>
+<!-- End Content Wrapper -->
+
+</div>
+<!-- End Site Wrapper -->
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>
+

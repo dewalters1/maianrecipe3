@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Upgrade v1.0 => v1.1 ONLY: Maian Recipe v2.0 Documentation - Free Recipe Script &copy; Maian Script World!</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+
+<!-- Start Site Wrapper -->
+<div id="wrapper">
+
+<!-- Top Bar -->
+<div id="topBar">
+  <p><a href="http://www.maianscriptworld.co.uk/" title="Maian Script World" onclick="window.open(this);return false">Click Here for more FREE PHP scripts from Maian Script World</a></p>
+</div>  
+<!-- End Top Bar -->
+
+<!-- Start Header -->
+<div id="header">
+ <img src="images/header.gif" alt="Maian Recipe v2.0 Documentation" title="Maian Recipe v2.0 Documentation" />
+</div>
+<!-- End Header -->
+
+<!-- Start Menu Bar -->
+<div id="menu">
+  <table width="75%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="index.html" title="Home">HOME</a></td>
+    <td><a href="installation.html" title="Installation">INSTALLATION</a></td>
+    <td><a href="features.html" title="Features">FEATURES</a></td>
+    <td><a href="upgrade.html" title="Upgrade" class="first">UPGRADE</a></td>
+    <td><a href="faq.html" title="F.A.Q">F.A.Q</a></td>
+    <td><a href="script-info.html" title="Script Info">SCRIPT INFO</a></td>
+  </tr>
+  </table>
+</div>
+<!-- End Menu Bar -->
+
+<!-- Start Content Wrapper -->
+<div id="contentWrapper">
+
+<!-- Start Body Area -->
+<div id="bodyArea">
+
+<span class="headLeft">Upgrade Routine v1.0 => v1.1 ONLY:</span>
+
+<p>Make sure you have a structural and schematic backup before you begin.<br /><br />Please read these instructions carefully. Upgrading is entirely at your own risk:</p>
+
+<span class="headLeft">Upgrade Instructions:</span>
+
+<p class="text">To upgrade to v1.1, follow the instructions below. Structure has been maintained and where a folder only is shown, you should replace the whole folder unless stated otherwise.<br /><br />
+<b>1</b>: Replace or add the following files/folders:</p>
+
+<p>/admin/ <i>(<b>Updated</b>)</i><br />
+/classes/fonts/ <i>(<b>New</b>)</i><br />
+/classes/class_mail.inc.php <i>(<b>Updated</b>)</i><br />
+/classes/php-captcha.inc.php <i>(<b>New</b>)</i><br />
+/templates/popups/contact.tpl.php <i>(<b>Updated</b>)</i><br />
+/templates/popups/friend.tpl.php <i>(<b>Updated</b>)</i><br />
+index.php <i>(<b>Updated</b>)</i>
+</p>
+
+<p class="text">If you had changed some of the user editable vars in the index.php file, you may have to re-edit them.<br /><br />
+<b>2</b>: Go to your control panel and access your recipe database. Run the following file to update your tables:</p>
+
+<p>/docs/upgrade_data/v1_1/upgrade.sql</p>
+
+<p class="text">NOTE: If your prefix is different from the default 'mr_', you must update this file <b>BEFORE</b> you run it.<br /><br />
+<b>3</b>: Open your language file and add the new variables that are shown in the following file:</p>
+
+<p>/docs/upgrade_data/v1_1/new_lang.txt</p>
+
+<p class="text">Copy and paste above the closing ?&gt; tag. Or simply overwrite your current language file with the new one.<br /><br />
+Thats it, all done. Check your system to make sure everything is working ok. If you wish to enable the SMTP mail options
+log into your admin area and update your settings. The captcha can be disabled as per the F.A.Q instructions.
+</p>
+
+</div>
+<!-- End Body Area -->
+
+
+<!-- Footer -->
+<div id="footer">
+ <p class="copyright">Powered by: <a href="http://www.maianrecipe.com/" title="Maian Recipe v2.0" onclick="window.open(this);return false"><b>Maian Recipe v2.0</b></a><br />&copy; 2006-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Maian Script World. All Rights Reserved</p>
+</div>
+
+<!-- End Footer -->
+
+</div>
+<!-- End Content Wrapper -->
+
+</div>
+<!-- End Site Wrapper -->
+
+<p>&nbsp;</p>
+
+</body>
+</html>
+

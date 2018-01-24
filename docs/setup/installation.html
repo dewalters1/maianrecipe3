@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+<title>Installation: Maian Recipe v2.0 Documentation - Free Recipe Script &copy; Maian Script World!</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body >
+
+<!-- Start Site Wrapper -->
+<div id="wrapper">
+
+<!-- Top Bar -->
+<div id="topBar">
+  <p><a href="http://www.maianscriptworld.co.uk/" title="Maian Script World" onclick="window.open(this);return false">Click Here for more FREE PHP scripts from Maian Script World</a></p>
+</div>  
+<!-- End Top Bar -->
+
+<!-- Start Header -->
+<div id="header">
+ <img src="images/header.gif" alt="Maian Recipe v2.0 Documentation" title="Maian Recipe v2.0 Documentation" />
+</div>
+<!-- End Header -->
+
+<!-- Start Menu Bar -->
+<div id="menu">
+  <table width="75%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="index.html" title="Home">HOME</a></td>
+    <td><a href="installation.html" title="Installation" class="first">INSTALLATION</a></td>
+    <td><a href="features.html" title="Features">FEATURES</a></td>
+    <td><a href="upgrade.html" title="Upgrade">UPGRADE</a></td>
+    <td><a href="faq.html" title="F.A.Q">F.A.Q</a></td>
+    <td><a href="script-info.html" title="Script Info">SCRIPT INFO</a></td>
+  </tr>
+  </table>
+</div>
+<!-- End Menu Bar -->
+
+<!-- Start Content Wrapper -->
+<div id="contentWrapper">
+
+<!-- Start Body Area -->
+<div id="bodyArea">
+
+<span class="headLeft">Installation:</span>
+
+<p>Please read the following installation instructions carefully:</p>
+
+<span class="headLeft">Requirements:</span>
+
+<p>&#8226; A server running <a href="http://www.php.net" title="PHP" onclick="window.open(this);return false">PHP</a> v4.3 or higher. Some of the syntax will <b>NOT</b> work on earlier versions. PHP5 is recommended.<br />
+   &#8226; A <a href="http://www.mysql.com" title="MySQL" onclick="window.open(this);return false">MySQL</a> database to hold the script tables.<br />
+   &#8226; A FTP (File Transfer Protocol) client to upload the files to your web server. <a href="http://filezilla-project.org/" title="Filezilla" onclick="window.open(this);return false">Filezilla</a> is recommended.<br />&nbsp;&nbsp;&nbsp;<b>(Uploading PHP files via a server control panel is not recommended_</b><br />
+   &#8226; A simple text editor to make config changes to the PHP files. Notepad will be fine.<br />
+   &#8226; Your server will require the <a href="http://www.php.net/gd" title="GD Library" onclick="window.open(this);return false">GD</a> Library for the spam captcha to work if enabled.
+</p>
+
+<span class="headLeft">Auto Setup (Recommended):</span>
+
+<p>
+
+<b>1</b>: In your server control panel, create a MySQL database to hold the script tables.<br /><br />
+
+<b>2</b>: Open the 'control/connect.inc.php' file in your text editor and update it to include the connection information for the database you just created. You should also
+change the default cookie key and name to something unique.<br /><br />
+
+<b>3</b>: Again, in your text editor, open the 'admin/control/defined.inc.php' file and set a username &amp; password for your admin area.<br /><br />
+
+<b>4</b>: Using your FTP client, upload all files/folders into a directory on your web server. ie: <i>http://www.yoursite.com/recipes/</i><br />&nbsp;&nbsp;&nbsp;(<b>Structure must be maintained and there can be NO whitespace in any .php files</b>)<br /><br />
+
+<b>5</b>: Chmod the 'templates/images/recipes/' folder to 0777 to make it world writeable. 0755 will work on some servers and should be used instead. Changing permissions can
+be done using your FTP client or server control panel. Not sure? Contact your host.<br /><br />
+
+<b>6</b>: Access the install folder in your browser: <i>http://www.yoursite.com/recipes/install/</i>. Follow the onscreen instructions.<br /><br />
+
+<b>7</b>: If setup was successful, delete or rename the 'install/' folder.<br /><br />
+
+<b>8</b>: Log into your administration area:<br /><br />
+<i>http://www.yoursite.com/recipes/admin/</i><br /><br />
+Click 'Settings' from the top menu to configure your system. Make sure the install and server paths are correct. Your CSS files and images will
+NOT load if the install path is incorrect.<br /><br />
+
+<b>9</b>: Finally, if you have enabled the search engine friendly urls rename the 'htaccess_COPY.txt' file to '.htaccess'. See the notes about this on the 'Features' page above.<br /><br />
+
+Thats it, you`re done. Hopefully Maian Recipe is working ok for you.<br /><br />
+
+<b>IMPORTANT! For better security it is recommended you rename the 'admin' folder to something unique!</b>
+
+</p>
+
+<span class="headLeft">Manual Setup (For Advanced Users ONLY):</span>
+
+<p>
+
+<b>1</b>: In your server control panel, create a MySQL database to hold the script tables and run the 'docs/schematic/tables.sql' file to set up the script tables.<br /><br />
+
+<b>2</b>: Open the 'control/connect.inc.php' file in your text editor and update it to include the connection information for the database you just created. You should also
+change the default cookie key and name to something unique.<br /><br />
+
+<b>3</b>: Again, in your text editor, open the 'admin/control/defined.inc.php' file and set a username &amp; password for your admin area.<br /><br />
+
+<b>4</b>: Using your FTP client, upload all files/folders into a directory on your web server. ie: <i>http://www.yoursite.com/recipes/</i><br />&nbsp;&nbsp;&nbsp;(<b>Structure must be maintained and there can be NO whitespace in any .php files</b>)<br /><br />
+
+<b>5</b>: Chmod the 'templates/images/recipes/' folder to 0777 to make it world writeable. 0755 will work on some servers and should be used instead. Changing permissions can
+be done using your FTP client or server control panel.<br /><br />
+
+<b>6</b>: Log into your administration area:<br /><br />
+<i>http://www.yoursite.com/recipes/admin/</i><br /><br />Click 'Settings' from the top menu to configure your system. Make sure the install and server paths are correct. Your CSS files and images will
+NOT load if the install path is incorrect.<br /><br />
+
+<b>7</b>: Finally, if you have enabled the search engine friendly urls rename the 'htaccess_COPY.txt' file to '.htaccess'. See the notes about this on the 'Features' page above.<br /><br />
+
+Thats it, you`re done. Hopefully Maian Recipe is working ok for you.<br /><br />
+
+<b>IMPORTANT! For better security it is recommended you rename the 'admin' folder to something unique!</b>
+
+</p>
+
+<span class="headLeft">Script Usage:</span>
+
+<p>
+
+<b>1</b>: Obviously, the settings are your first port of call. Update them enabling the features you want. For other feature disabling/enabling see the 'User Defined Variables' below.<br /><br />
+
+<b>2</b>: Maian Recipe comes pre-configured with 80 categories if selected during install. You can use these or delete them and use your own. Use the 'Categories' link in your admin area to manage them. Note that ALL
+pre-configured categories have the same initial settings. If you wish to enable/disable ratings, recipes and comments for specific categories, click a category to edit it.<br /><br />
+
+<b>3</b>: Once your categories are in place, use the 'Recipes' link in your admin area to add new recipes. This should be fairly self explanatory.<br /><br />
+
+<b>4</b>: Make sure you test each function to make sure it is working correctly. Visitors can submit recipes or comments via your public web interface.<br /><br />
+
+Enjoy!
+
+</p>
+
+<span class="headLeft">Template Structure:</span>
+
+<p>ALL the system templates are in the 'templates/ folder. HTML has been seperated from the PHP code and placed in the 'templates/html/' folder. You should be careful NOT to
+remove any of the system variables in the templates unless you know what you are doing. Variables appear as text between braces in the 'templates/html/' folder. If you accidentally
+delete something, re-download the script and replace the template file(s).<br /><br />
+
+Maian Recipe is 99% tableless, meaning it uses CSS for layout structure. If you aren`t sure about CSS, be careful when making changes. A slight percentage shift on a div can
+throw the whole layout out of whack.<br /><br />
+
+All e-mail templates are located in the 'templates/email' folder. Edit the text in the *.txt files if required and re-upload. Again, be careful with the brace vars. These auto
+parse when the system runs.<br /><br />
+
+All language is located in the 'lang/english.php' file.<br /><br />
+
+All colour attributes and fonts are parsed in the 'style.css' cascading stylesheet. Additional stylesheets are mentioned on the 'Features' page.
+
+</p>
+
+<span class="headLeft">How to Add New Pages:</span>
+
+<p>All my scripts are structured the same with the templates and they all use the <a href="http://www.phpsavant.com/yawiki/" title="Savant3" onclick="window.open(this);return false">Savant3</a> template engine. I personally
+think this is the best template engine out there. Adding new pages is relatively easy:<br /><br />
+[<b>1</b>] - Create a new .tpl.php file and pop it in the 'templates' folder. You might want to look at the structure of the others to get the same HTML/div information. These
+files can use both standard HTML and PHP.<br /><br />
+[<b>2</b>] - Next open the index.php and find the closing <b>break;</b> at the bottom of the file. Lets say you create a new file called 'pictures.tpl.php', after this break add the following:<br /><br />
+<span style="display:block;border:1px solid #c5c089;color:#000;background-color:#fffbcb;padding:5px">
+case 'pictures':<br />
+include(PATH.'control/header.inc.php');<br />
+&#036;tpl =&amp; new Savant3();<br />
+&#036;tpl->display('templates/pictures.tpl.php');<br />
+include(PATH.'control/footer.inc.php');<br />
+break;
+</span><br />
+Access the new page as '?p=pictures'. If you are using mod_rewrite you`ll also need to add the 'pictures' attribute to the first RewriteRule. If you add this you would access the page as 'pictures.html'.<br /><br />
+[<b>3</b>] - If you need to pass dynamic data into the template, assign a new var:<br /><br />
+<span style="display:block;border:1px solid #c5c089;color:#000;background-color:#fffbcb;padding:5px">
+case 'pictures':<br />
+&#036;tpl =&amp; new Savant3();<br />
+<b>&#036;tpl->assign('RANDOM', rand(1,9));</b><br />
+&#036;tpl->display('templates/pictures.tpl.php');<br />
+break;
+</span><br />
+Then use &lt;?php echo $this->RANDOM; ?&gt; in the template. This example would generate a random number from 1 to 9. You could also add this directly into the template as &lt;?php echo rand(1,9); ?&gt;. You won`t need to pass data using the assign
+method unless you want content generated by the music system which couldn`t be accessed directly in the template.<br /><br />
+Hope that helps create new pages.</p>
+
+<span class="headLeft">User Defined Variables:</span>
+
+<p>Some features &amp; functions can be disabled or updated in Maian Recipe, but may not appear in the admin settings. For some user editable variables, see the following files and read the notes there:<br /><br />
+control/defined.inc.php<br />
+admin/control/defined.inc.php<br /><br />
+I placed these variables seperately to help you with some system adjustments.
+</p>
+
+<span class="headLeft">SMTP Mail Settings:</span>
+
+<p>Some servers disable the PHP mail function because of abuse and require all mail be sent via SMTP. If the e-mails work, you probably won`t need to bother with this. Otherwise, enable
+this in your settings. SMTP is powered by the <a href="http://phpmailer.codeworxtech.com/" title="Andy Prevost" onclick="window.open(this);return false">PHP Mailer Class</a>.
+</p>
+
+</div>
+<!-- End Body Area -->
+
+
+<!-- Footer -->
+<div id="footer">
+ <p class="copyright">Powered by: <a href="http://www.maianrecipe.com/" title="Maian Recipe v2.0" onclick="window.open(this);return false"><b>Maian Recipe v2.0</b></a><br />&copy; 2006-<script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Maian Script World. All Rights Reserved</p>
+</div>
+
+<!-- End Footer -->
+
+</div>
+<!-- End Content Wrapper -->
+
+</div>
+<!-- End Site Wrapper -->
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>
