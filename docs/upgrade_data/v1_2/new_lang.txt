@@ -1,0 +1,27 @@
+//=============================
+// new variables for v2.0
+//=============================
+
+
+$home            = '<b>WARNING!</b><br /><br />Please remove the \'/install/\' folder from your installation directory.';
+$home2           = 'Welcome to Maian Recipe, a simple recipe system that enables you to post recipes on your website. Use the links
+                    above to manage your recipe system. This is aimed to be a nice simple system, so please don\'t expect too many advanced features in the future. :)<br /><br />
+                    For details on how to get started with your recipe system, please see the <a href="../docs/setup/index.html" target="_blank"><u>documentation</u></a>.
+                    ';
+$home3           = 'Donations';
+$home4           = 'If you like this script and would like to send a small donation as a token of appreciation, please click the following link:';
+$home5           = 'Donations help towards to continued development of Maian Recipe.<br /><br />Hope you enjoy this script,<br /><br />
+                    David.<br /><a href="http://www.maianscriptworld.co.uk" target="_blank" title="Maian Script World">www.maianscriptworld.co.uk</a><br /><br />
+                    ';
+
+$settings21      = 'Enable Mod Rewrite';
+$settings22      = 'Installation Folder URL';
+$settings23      = 'No trailing slash';
+
+$script2         = 'v2.0';
+
+//=============================
+// updated variables for v2.0
+//=============================
+
+$settings9       = 'Configure your program settings below. If you enable the SMTP option, this will overwrite the default PHP mail function. Note that some servers require authentication for this to work. For search engine friendly urls, enable mod_rewrite. Your server MUST support .htaccess for this to work. See the docs for more information.';
