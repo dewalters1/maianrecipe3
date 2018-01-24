@@ -1,9 +1,10 @@
 <?php
 
 /*---------------------------------------------
-  MAIAN RECIPE v2.0
+  MAIAN RECIPE v3.0
   E-Mail: N/A
-  Website: www.maianscriptworld.co.uk
+  Original Website: www.maianscriptworld.co.uk
+  Current Website: github.com/dewalters1/maianrecipe3
   This File: Main Control File
   Written by David Ian Bennett
   Updated by Dennis Walters for PHP 7
