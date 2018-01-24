@@ -6,6 +6,7 @@
   Website: www.maianscriptworld.co.uk
   This File: Main Control File
   Written by David Ian Bennett
+  Updated by Dennis Walters for PHP 7
 ----------------------------------------------*/
 
 // Error reporting level...E_ALL for development..
@@ -339,35 +340,7 @@ switch ($cmd) {
      $conUrl = '?p=search-free-recipes&amp;keys='.urlencode(cleanData($RECIPE->submitted_by)).'&amp;cat=all';
    }
 
-   define('RECIPE', $RECIPE);
-   define('CAT', $CAT);
-   define('RECIPE_LINKS_TXT', $ps_recipe);
-   define('RATING_SYSTEM', ($CAT->enRating=='yes' && $RECIPE->enRating=='yes' ? $MRRAT->buildRatingSystem($ps_recipe2,$_GET['recipe']) : ''));
-   define('ADD_COMMENT', ($CAT->enComments=='yes' && $RECIPE->enComments=='yes' ? $MRREC->buildAddCommentsForm($ps_recipe3) : ''));
-   define('JUMP_TO_CATEGORY_TXT', $ps_recipe4);
-   define('RECIPE_SELECTION_TXT', $ps_recipe5);
-   define('PICTURES_TXT', $ps_recipe6);
-   define('SHOW_PICTURES', $MRREC->buildRecipePictures($ps_recipe18));
-   define('VISITOR_COMMENTS', ($CAT->enComments=='yes' && $RECIPE->enComments=='yes' ? $MRREC->buildRecipeComments($ps_recipe15,$ps_recipe16,$ps_recipe7) : ''));
-   define('CLOUD_TAGS', ($SETTINGS->enCloudTags=='yes' ? $MRREC->buildRecipeCloudTags($ps_recipe17) : ''));
-   define('HITS_TXT', (ENABLE_HIT_COUNT ? $ps_recipe19 : '&nbsp;'));
-   define('HITS', (ENABLE_HIT_COUNT ? $MRREC->buildRecipeHitCount($RECIPE->hits) : ''));
-   define('CONTACT_US_TXT', $ps_recipe8);
-   define('PRINT_FRIENDLY_TXT', $ps_recipe10);
-   define('TELL_A_FRIEND_TXT', $ps_recipe9);
-   define('DATE_BAR_TXT', ($RECIPE->submitted_by ? $ps_recipe34.' <span class="highlight"><a href="'.$conUrl.'" title="'.cleanData($RECIPE->submitted_by).'">'.cleanData($RECIPE->submitted_by).'</a></span> | ' : '').$ps_recipe35.' <span class="highlight">'.$RECIPE->adate.'</span><br />'.$breadCrumbs);
-   define('INGREDIENTS_TXT', $ps_recipe11);
-   define('INSTRUCTIONS_TXT', $ps_recipe12);
-   define('SUBMIT_TXT', $ps_recipe14);
-   define('S_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'add-recipe/'.$RECIPE->cat.'/index.html' : '?p=add-recipe&amp;cat='.$RECIPE->cat));
-   define('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-recipe/'.$_GET['recipe'].'/index.html' : '?p=contact-recipe&amp;recipe='.$_GET['recipe']));
-   define('F_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'tell-a-friend/'.$_GET['recipe'].'/index.html' : '?p=tell-a-friend&amp;recipe='.$_GET['recipe']));
-   define('P_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'print/'.$_GET['recipe'].'/index.html' : '?p=print&amp;recipe='.$_GET['recipe']));
-   define('LOAD_CATEGORIES', $MRREC->loadCategorySelect());
-   define('OTHER_RECIPES_IN_CATEGORY', $MRREC->otherRecipesInThisCategory($ps_recipe13,$RECIPE->cat));
-
    $tpl = new Savant3();
-/*
    $tpl->assign('RECIPE', $RECIPE);
    $tpl->assign('CAT', $CAT);
    $tpl->assign('RECIPE_LINKS_TXT', $ps_recipe);
@@ -392,9 +365,9 @@ switch ($cmd) {
    $tpl->assign('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-recipe/'.$_GET['recipe'].'/index.html' : '?p=contact-recipe&amp;recipe='.$_GET['recipe']));
    $tpl->assign('F_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'tell-a-friend/'.$_GET['recipe'].'/index.html' : '?p=tell-a-friend&amp;recipe='.$_GET['recipe']));
    $tpl->assign('P_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'print/'.$_GET['recipe'].'/index.html' : '?p=print&amp;recipe='.$_GET['recipe']));
-   $tpl->assign('LOAD_CATEGORIES', $MRREC->loadCategorySelect());
+   $tpl->assign('LOAD_CATEGORIES', $MRREC->loadCategorySelect($connect));
    $tpl->assign('OTHER_RECIPES_IN_CATEGORY', $MRREC->otherRecipesInThisCategory($ps_recipe13,$RECIPE->cat));
-*/
+
    $tpl->display('templates/recipe.tpl.php');
 
    include(PATH.'control/footer.inc.php');
@@ -467,19 +440,7 @@ switch ($cmd) {
    
    include(PATH.'control/header.inc.php');
 
-   define('VIEWING_CAT_TXT', str_replace(array('{cat}','{count}'),array((isset($thisParent->catname) ? cleanData($thisParent->catname).' / ' : '').cleanData($CAT->catname),$rCount),$ps_category3));
-   define('PLEASE_CHOOSE_TXT', ($rCount>0 ? ($CAT->comments ? cleanData($CAT->comments) : $ps_category6) : $ps_category7));
-   define('RECIPES', $MRREC->displayCategoryRecipes());
-   define('CAT_RSS', buildCategoryRSSLink($_GET['cat']));
-   define('COUNT',$rCount);
-   define('PAGE_NUMBERS', $pNumbers);
-   define('OTHER_CATS_TXT', $ps_category4);
-   define('OTHER_CATS', $MRREC->showRelatedCategories($_GET['cat']));
-   define('RECIPE_SELECTION_TXT', $ps_category5);
-   define('RECIPE_SELECTION', $MRREC->showMostPopularRecipesForCategoryGroup($_GET['cat']));
-
    $tpl = new Savant3();
-/*
    $tpl->assign('VIEWING_CAT_TXT', str_replace(array('{cat}','{count}'),array((isset($thisParent->catname) ? cleanData($thisParent->catname).' / ' : '').cleanData($CAT->catname),$rCount),$ps_category3));
    $tpl->assign('PLEASE_CHOOSE_TXT', ($rCount>0 ? ($CAT->comments ? cleanData($CAT->comments) : $ps_category6) : $ps_category7));
    $tpl->assign('RECIPES', $MRREC->displayCategoryRecipes());
@@ -490,7 +451,6 @@ switch ($cmd) {
    $tpl->assign('OTHER_CATS', $MRREC->showRelatedCategories($_GET['cat']));
    $tpl->assign('RECIPE_SELECTION_TXT', $ps_category5);
    $tpl->assign('RECIPE_SELECTION', $MRREC->showMostPopularRecipesForCategoryGroup($_GET['cat']));
-*/
    $tpl->display('templates/category.tpl.php');
 
    include(PATH.'control/footer.inc.php');
@@ -625,39 +585,7 @@ switch ($cmd) {
    
    include(PATH.'control/header.inc.php');
 
-   define('IS_SENT', (isset($OK) ? true : false));
-   define('A_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'add-recipe.html' : '?p=add-recipe'));
-   define('WELCOME_MSG', $ps_addrecipe);
-   define('ADD_RECIPE_TXT', $ps_header6);
-   define('ADD_RECIPE_TXT2', $ps_addrecipe3);
-   define('ADD_RECIPE_TXT3', $ps_addrecipe4);
-   define('ADD_RECIPE_TXT4', $ps_addrecipe5);
-   define('ADD_RECIPE_TXT5', $ps_addrecipe6);
-   define('CATEGORIES', $MRREC->loadCategorySelect(true));
-   define('CAPTCHA', buildContactUsCaptcha($ps_contact10,$ps_contact11,(array_key_exists('word',$formErrors) ? $formErrors['word'] : '')));
-   define('NAME_TXT', $ps_contact6);
-   define('EMAIL_TXT', $ps_contact7.' '.$ps_addrecipe2);
-   define('RECIPE_NAME_TXT', $ps_addrecipe7);
-   define('CAT_TXT', $ps_addrecipe8);
-   define('INGREDIENTS_TXT', $ps_addrecipe9);
-   define('INSTRUCTIONS_TXT', $ps_addrecipe10);
-   define('SETTINGS', $SETTINGS);
-   define('ERRORS', $formErrors);
-   define('NAME_ERROR', $ps_contact);
-   define('EMAIL_ERROR', $ps_contact2);
-   define('RNAME_ERROR', $ps_addrecipe21);
-   define('INGREDIENTS_ERROR', $ps_addrecipe15);
-   define('INSTRUCTIONS_ERROR', $ps_addrecipe16);
-   define('IMG_ERROR', str_replace('{extensions}',str_replace('.','',strtoupper($SETTINGS->validImages)),$ps_addrecipe17));
-   define('CODE_ERROR', $ps_contact4);
-   define('FORM_ERRORS', htmlspecialchars($javascript3));
-   define('PICTURES', ($SETTINGS->maxImages>0 && $SETTINGS->validImages ? $MRREC->buildAddRecipePictures($ps_addrecipe6,$eImgError) : ''));
-   define('MESSAGE_SENT', $ps_addrecipe18);
-   define('MESSAGE_SENT2', str_replace('{website_name}',cleanData($SETTINGS->website),($SETTINGS->enRecApp=='yes' ? $ps_addrecipe19 : $ps_addrecipe20)));
-   define('SEND_TXT', $ps_header6);
-
    $tpl = new Savant3();
-/*
    $tpl->assign('IS_SENT', (isset($OK) ? true : false));
    $tpl->assign('A_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'add-recipe.html' : '?p=add-recipe'));
    $tpl->assign('WELCOME_MSG', $ps_addrecipe);
@@ -666,7 +594,7 @@ switch ($cmd) {
    $tpl->assign('ADD_RECIPE_TXT3', $ps_addrecipe4);
    $tpl->assign('ADD_RECIPE_TXT4', $ps_addrecipe5);
    $tpl->assign('ADD_RECIPE_TXT5', $ps_addrecipe6);
-   $tpl->assign('CATEGORIES', $MRREC->loadCategorySelect(true));
+   $tpl->assign('CATEGORIES', $MRREC->loadCategorySelect($connect,true));
    $tpl->assign('CAPTCHA', buildContactUsCaptcha($ps_contact10,$ps_contact11,(array_key_exists('word',$formErrors) ? $formErrors['word'] : '')));
    $tpl->assign('NAME_TXT', $ps_contact6);
    $tpl->assign('EMAIL_TXT', $ps_contact7.' '.$ps_addrecipe2);
@@ -688,7 +616,6 @@ switch ($cmd) {
    $tpl->assign('MESSAGE_SENT', $ps_addrecipe18);
    $tpl->assign('MESSAGE_SENT2', str_replace('{website_name}',cleanData($SETTINGS->website),($SETTINGS->enRecApp=='yes' ? $ps_addrecipe19 : $ps_addrecipe20)));
    $tpl->assign('SEND_TXT', $ps_header6);
-*/
    $tpl->display('templates/add-recipe.tpl.php');
 
    include(PATH.'control/footer.inc.php');
@@ -701,20 +628,12 @@ switch ($cmd) {
    
    include(PATH.'control/header.inc.php');
 
-   define('ABOUT_US_TXT', $ps_header7);
-   define('LATEST_RECIPES_TXT', $ps_index4);
-   define('LATEST_RECIPES', $MRREC->showLatestAndMostPopularLinks($connect,'latest'));
-   define('MOST_POPULAR_TXT', $ps_index5);
-   define('MOST_POPULAR', $MRREC->showLatestAndMostPopularLinks($connect,'popular'));
-
    $tpl = new Savant3();
-/*
    $tpl->assign('ABOUT_US_TXT', $ps_header7);
    $tpl->assign('LATEST_RECIPES_TXT', $ps_index4);
    $tpl->assign('LATEST_RECIPES', $MRREC->showLatestAndMostPopularLinks($connect,'latest'));
    $tpl->assign('MOST_POPULAR_TXT', $ps_index5);
    $tpl->assign('MOST_POPULAR', $MRREC->showLatestAndMostPopularLinks($connect,'popular'));
-*/
    $tpl->display('templates/about-us.tpl.php');
 
    include(PATH.'control/footer.inc.php');
@@ -748,18 +667,7 @@ switch ($cmd) {
    
    include(PATH.'control/header.inc.php');
 
-   define('SEARCH_TXT', $ps_search);
-   define('SEARCH_RESULTS_TXT', str_replace(array('{keys}','{count}'),array($searchKeys,$sCount),$ps_search2));
-   define('SEARCH_RESULTS', $MRREC->displayCategoryRecipes($searchKeys));
-   define('COUNT', $sCount);
-   define('PAGE_NUMBERS', $pNumbers);
-   define('FILTER_BY_TXT', $ps_search3);
-   define('LOAD_CATEGORIES', $MRREC->loadCategorySearchSelect($searchKeys));
-   define('FILTER_BY_TXT2', $ps_search4);
-   define('LOAD_CONTRIBUTORS', $MRREC->loadContributorsList($connect,$searchKeys));
-
    $tpl = new Savant3();
-/*
    $tpl->assign('SEARCH_TXT', $ps_search);
    $tpl->assign('SEARCH_RESULTS_TXT', str_replace(array('{keys}','{count}'),array($searchKeys,$sCount),$ps_search2));
    $tpl->assign('SEARCH_RESULTS', $MRREC->displayCategoryRecipes($searchKeys));
@@ -769,7 +677,6 @@ switch ($cmd) {
    $tpl->assign('LOAD_CATEGORIES', $MRREC->loadCategorySearchSelect($searchKeys));
    $tpl->assign('FILTER_BY_TXT2', $ps_search4);
    $tpl->assign('LOAD_CONTRIBUTORS', $MRREC->loadContributorsList($connect,$searchKeys));
-*/
    $tpl->display('templates/search.tpl.php');
 
    include(PATH.'control/footer.inc.php');
@@ -852,30 +759,11 @@ switch ($cmd) {
 
    $tpl = new Savant3();
    if ($cmd=='contact-recipe') {
-//   $tpl->assign('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-recipe/'.$_GET['recipe'].'/index.html' : '?p=contact-recipe&amp;recipe='.$_GET['recipe']));
-   define('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-recipe/'.$_GET['recipe'].'/index.html' : '?p=contact-recipe&amp;recipe='.$_GET['recipe']));
+     $tpl->assign('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-recipe/'.$_GET['recipe'].'/index.html' : '?p=contact-recipe&amp;recipe='.$_GET['recipe']));
    } else {
-//   $tpl->assign('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-us.html' : '?p=contact-us'));
-   define('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-us.html' : '?p=contact-us'));
+     $tpl->assign('C_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'contact-us.html' : '?p=contact-us'));
    }
 
-   define('NAME_ERROR', $ps_contact);
-   define('EMAIL_ERROR', $ps_contact2);
-   define('COMMENTS_ERROR', $ps_contact3);
-   define('CODE_ERROR', $ps_contact4);
-   define('FORM_ERRORS', htmlspecialchars($javascript3));
-   define('CONTACT_TXT', (isset($_GET['recipe']) ? str_replace('{recipe}',cleanData($RECIPE->name),$ps_contact16) : $ps_contact5));
-   define('NAME_TXT', $ps_contact6);
-   define('EMAIL_TXT', $ps_contact7);
-   define('COMMENTS_TXT', $ps_contact8);
-   define('CAPTCHA', buildContactUsCaptcha($ps_contact10,$ps_contact11,(array_key_exists('word',$formErrors) ? $formErrors['word'] : '')));
-   define('SETTINGS', $SETTINGS);
-   define('ERRORS', $formErrors);
-   define('IS_SENT', (isset($OK) ? true : false));
-   define('MESSAGE_SENT', $ps_contact12);
-   define('MESSAGE_SENT2', str_replace('{website_name}',cleanData($SETTINGS->website),$ps_contact13));
-   define('SEND_TXT', $ps_contact9);
-/*   
    $tpl->assign('NAME_ERROR', $ps_contact);
    $tpl->assign('EMAIL_ERROR', $ps_contact2);
    $tpl->assign('COMMENTS_ERROR', $ps_contact3);
@@ -892,7 +780,6 @@ switch ($cmd) {
    $tpl->assign('MESSAGE_SENT', $ps_contact12);
    $tpl->assign('MESSAGE_SENT2', str_replace('{website_name}',cleanData($SETTINGS->website),$ps_contact13));
    $tpl->assign('SEND_TXT', $ps_contact9);
-*/
    $tpl->display('templates/contact-us.tpl.php');
 
    include(PATH.'control/footer.inc.php');
@@ -916,16 +803,7 @@ switch ($cmd) {
      exit;
    }
 
-   define('BASE_PATH', $SETTINGS->install_path);
-   define('CHARSET', $charset);
-   define('RECIPE', $RECIPE);
-   define('BY', str_replace(array('{website_name}','{website_url}'),array(cleanData($SETTINGS->website),$SETTINGS->install_path),$ps_recipe36));
-   define('INGREDIENTS_TXT', $ps_recipe11);
-   define('INSTRUCTIONS_TXT', $ps_recipe12);
-   define('DATE_BAR_TXT', ($RECIPE->submitted_by ? $ps_recipe34.' <span class="highlight">'.cleanData($RECIPE->submitted_by).'</span> | ' : '').$ps_recipe35.' <span class="highlight">'.$RECIPE->adate.'</span>');
-   
    $tpl = new Savant3();
-/*
    $tpl->assign('BASE_PATH', $SETTINGS->install_path);
    $tpl->assign('CHARSET', $charset);
    $tpl->assign('RECIPE', $RECIPE);
@@ -933,7 +811,6 @@ switch ($cmd) {
    $tpl->assign('INGREDIENTS_TXT', $ps_recipe11);
    $tpl->assign('INSTRUCTIONS_TXT', $ps_recipe12);
    $tpl->assign('DATE_BAR_TXT', ($RECIPE->submitted_by ? $ps_recipe34.' <span class="highlight">'.cleanData($RECIPE->submitted_by).'</span> | ' : '').$ps_recipe35.' <span class="highlight">'.$RECIPE->adate.'</span>');
-*/
    $tpl->display('templates/printer-friendly.tpl.php');
 
    break;
@@ -1042,30 +919,7 @@ switch ($cmd) {
    
    include(PATH.'control/header.inc.php');
 
-   define('F_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'tell-a-friend/'.$_GET['recipe'].'/index.html' : '?p=tell-a-friend&amp;recipe='.$_GET['recipe']));
-   define('NAME_ERROR', $ps_contact);
-   define('EMAIL_ERROR', $ps_contact2);
-   define('FRIEND_NAME_ERROR', $ps_contact20);
-   define('FRIEND_EMAIL_ERROR', $ps_contact21);
-   define('COMMENTS_ERROR', $ps_contact3);
-   define('CODE_ERROR', $ps_contact4);
-   define('FORM_ERRORS', htmlspecialchars($javascript3));
-   define('CONTACT_TXT', str_replace('{recipe}',cleanData($RECIPE->name),$ps_contact22));
-   define('NAME_TXT', $ps_contact6);
-   define('EMAIL_TXT', $ps_contact7);
-   define('FRIEND_NAME_TXT', $ps_contact18);
-   define('FRIEND_EMAIL_TXT', $ps_contact19);
-   define('COMMENTS_TXT', $ps_contact8);
-   define('CAPTCHA', buildContactUsCaptcha($ps_contact10,$ps_contact11,(array_key_exists('word',$formErrors) ? $formErrors['word'] : '')));
-   define('SETTINGS', $SETTINGS);
-   define('ERRORS', $formErrors);
-   define('IS_SENT', (isset($OK) ? true : false));
-   define('MESSAGE_SENT', $ps_contact12);
-   define('MESSAGE_SENT2', (isset($OK) ? str_replace(array('{website_name}','{friend}'),array(cleanData($SETTINGS->website),cleanData($_POST['fname'])),$ps_contact27) : ''));
-   define('SEND_TXT', $ps_contact9);
-   
    $tpl = new Savant3();
-/*
    $tpl->assign('F_URL', $SETTINGS->install_path.($SETTINGS->modr=='yes' ? 'tell-a-friend/'.$_GET['recipe'].'/index.html' : '?p=tell-a-friend&amp;recipe='.$_GET['recipe']));
    $tpl->assign('NAME_ERROR', $ps_contact);
    $tpl->assign('EMAIL_ERROR', $ps_contact2);
@@ -1087,7 +941,6 @@ switch ($cmd) {
    $tpl->assign('MESSAGE_SENT', $ps_contact12);
    $tpl->assign('MESSAGE_SENT2', (isset($OK) ? str_replace(array('{website_name}','{friend}'),array(cleanData($SETTINGS->website),cleanData($_POST['fname'])),$ps_contact27) : ''));
    $tpl->assign('SEND_TXT', $ps_contact9);
-*/
    $tpl->display('templates/tell-a-friend.tpl.php');
 
    include(PATH.'control/footer.inc.php');
