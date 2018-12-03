@@ -1,18 +1,20 @@
 <?php
 
 /*---------------------------------------------
-  MAIAN RECIPE v2.0
+  MAIAN RECIPE v3.0
   E-Mail: N/A
-  Website: www.maianscriptworld.co.uk
+  Original Website: www.maianscriptworld.co.uk
+  Current Website: github.com/dewalters1/maianrecipe3
   This File: Admin User Editable Variables
   Written by David Ian Bennett
+  Updated by Dennis Walters for PHP 7
 ----------------------------------------------*/
 
 // Set username for administration..
-define ('USERNAME', 'dewalters1');
+define ('USERNAME', 'maianrecipe');
 
 // Set password for administration..
-define ('PASSWORD', 'Dr@g0n5!');
+define ('PASSWORD', 'PassWord1');
 
 // How many recipes per page in the admin area..
 define ('PER_PAGE', 30);
