@@ -1,4 +1,16 @@
-<?php if (!defined('PARENT')) { include('index.html'); exit; } ?>
+<?php 
+
+/*---------------------------------------------
+  MAIAN RECIPE v3.0
+  E-Mail: N/A
+  Original Website: www.maianscriptworld.co.uk
+  Current Website: github.com/dewalters1/maianrecipe3
+  This File: Admin - Comments
+  Written by David Ian Bennett
+  Updated by Dennis Walters for PHP 7
+----------------------------------------------*/
+
+if (!defined('PARENT')) { include('index.html'); exit; } ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

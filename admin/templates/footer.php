@@ -1,4 +1,15 @@
 <?php
+
+/*---------------------------------------------
+  MAIAN RECIPE v3.0
+  E-Mail: N/A
+  Original Website: www.maianscriptworld.co.uk
+  Current Website: github.com/dewalters1/maianrecipe3
+  This File: Admin - Footer
+  Written by David Ian Bennett
+  Updated by Dennis Walters for PHP 7
+----------------------------------------------*/
+
 if (!defined('PARENT')) { include('index.html'); exit; }
 
 // The footer link to Maian Script World should remain in place.
@@ -7,7 +18,7 @@ if (!defined('PARENT')) { include('index.html'); exit; }
 // Removing the link without permission invalidates any support.
 // Thank you! 
 
-$show_footer  = $script3.': <a href="http://www.maianrecipe.com/" title="'.$script.' '.$script2.'" onclick="window.open(this);return false"><b>'.$script.' '.$script2.'</b></a><br />&copy; 2006-'.date("Y").' Maian Script World. '.$script9;
+$show_footer  = $script3.': <a href="http://gihub.com/dewalters1/maianrecipe3/" title="'.$script.' '.$script2.'" onclick="window.open(this);return false"><b>'.$script.' '.$script2.'</b></a><br />&copy; 2006-'.date("Y").' Maian Script World. '.$script9;
 
 ?>
 
