@@ -2,8 +2,9 @@
 error_reporting(E_ALL ^ E_NOTICE);
 $GDArray = gd_info();
 
-//$Version = $GDArray["GD Version"];
-$Version = @preg_match('/((?:(\d+)\.)?(?:(\d+)\.)?(?:(\d+)))/', '', $Version);
+$Version = $GDArray["GD Version"];
+$Version = preg_replace('/[[:alpha:][:space:]()]+/', '', $GDArray['GD Version']);
+//$Version = @preg_match('/((?:(\d+)\.)?(?:(\d+)\.)?(?:(\d+)))/', '', $Version);
 //$Version = $GDArray["GD Version"];
 //$Ver = @preg_replace('(?:(\d+)\.)?(?:(\d+)\.)?(?:(\d+)\.\d+)', '', $Version);
 //echo (isset($Version) ? 'v'.$Version.' - <b>'.$setup19.'</b>' : $setup22);

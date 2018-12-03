@@ -2,11 +2,11 @@
 
 /*++++++++++++++++++++++++++++++++++++++++
 
-  Script: Maian Music v1.3
+  Script: Maian Recipe v3.0
   Written by: David Ian Bennett
   Updated for PHP 7 by:  Dennis Walters
   E-Mail: N/A
-  Website: http://www.maianscriptworld.co.uk
+  Website: github.com/dewalters1/maianrecipe3
 
 ++++++++++++++++++++++++++++++++++++++++++*/
 

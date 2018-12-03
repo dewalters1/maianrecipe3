@@ -1,11 +1,11 @@
 <?php
 
 /*---------------------------------------------
-  MAIAN RECIPE v2.0
+  MAIAN RECIPE v3.0
   Written by David Ian Bennett
   Updated for PHP 7 by: Dennis Walters
   E-Mail: N/A
-  Website: www.maianscriptworld.co.uk
+  Website: github.com/dewalters1/maianrecipe3
   This File: Installer
 ----------------------------------------------*/
 
@@ -303,8 +303,7 @@ if ($stage1)
 {
 if (function_exists('gd_info')) { 
   $GDArray = gd_info();
-//  $Version = @preg_replace('[[:alpha:][:space:]()]+', '', $GDArray['GD Version']);
-  $Version = @preg_replace('(?<=^| )\d+(\.\d+)?(?=$| )', '', $GDArray['GD Version']);
+  $Version = preg_replace('/[[:alpha:][:space:]()]+/', '', $GDArray['GD Version']);
 }
 ?>
 <tr>
@@ -342,7 +341,7 @@ if (function_exists('gd_info')) {
   </tr>
   <tr>
     <td class="pad"><b><?php echo $setup15; ?></b></td>
-    <td class="pad"><span class="info"><?php echo (isset($Version) ? 'v'.$Version.' - <b>'.$setup19.'</b>' : $setup22); echo ($Version);?></span></td>
+    <td class="pad"><span class="info"><?php echo (isset($Version) ? 'v'.$Version.' - <b>'.$setup19.'</b>' : $setup22);?></span></td>
   </tr>
   </table>
   <?php
