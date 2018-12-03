@@ -1,0 +1,11 @@
+Project:  Maian Recipe
+Author:  David Ian Bennett
+Updated (v3.x) by:  Dennis Walters
+
+v3.0.0 alpha - 2018/01/24
+- Started converting PHP 5.x code to PHP 7.x
+
+v3.0.1 alpha - 2018/12/02
+- Fixed install scripts/pages
+- Fixed admin scripts/pages
+
