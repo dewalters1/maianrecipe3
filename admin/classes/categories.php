@@ -1,11 +1,13 @@
 <?php
 
 /*---------------------------------------------
-  MAIAN RECIPE v2.0
+  MAIAN RECIPE v3.0
   E-Mail: N/A
-  Website: www.maianscriptworld.co.uk
-  This File: Admin Category Management Class
+  Original Website: www.maianscriptworld.co.uk
+  Current Website: github.com/dewalters1/maianrecipe3
+  This File: Main Control File
   Written by David Ian Bennett
+  Updated by Dennis Walters for PHP 7
 ----------------------------------------------*/
 
 class cats {
@@ -77,7 +79,7 @@ function deleteCat($con,$SETTINGS) {
   $query = mysqli_query($con,"SELECT * FROM ".$this->prefix."recipes
   WHERE cat = '".(int)$_GET['del']."'
   OR cat    = '".(int)$_GET['del']."'
-  ") or die(mysqli_error($));
+  ") or die(mysqli_error($con));
   while ($RECIPE = mysqli_fetch_object($query)) {
     // Remove recipe images..
     $q_pic = mysqli_query($con,"SELECT * FROM ".$this->prefix."pictures

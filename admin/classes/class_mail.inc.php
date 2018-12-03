@@ -1,11 +1,13 @@
 <?php
 
 /*---------------------------------------------
-  MAIAN RECIPE v2.0
+  MAIAN RECIPE v3.0
   E-Mail: N/A
-  Website: www.maianscriptworld.co.uk
+  Original Website: www.maianscriptworld.co.uk
+  Current Website: github.com/dewalters1/maianrecipe3
   This File: Admin Mail Handling Class
   Written by David Ian Bennett
+  Updated by Dennis Walters for PHP 7
 ----------------------------------------------*/
 
 // Load mailer based on PHP version..
